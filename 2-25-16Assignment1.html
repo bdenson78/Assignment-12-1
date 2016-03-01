@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('myApp', [])
+        app.controller('myCtrl', function ($scope) {
+            $scope.names = [
+                { name: 'Jesse' },
+                { name: 'Mike' },
+                { name: 'Dave' },
+                { name: 'Kasia' },
+                { name: 'Brandon' },
+                { name: 'Chris' }
+            ]
+        })
+    </script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <span><b>Names of people in class (uppercase):</b></span>
+        <p ng-repeat="name in names"><span>{{name.name}}: </span><span><strong>({{name.name | uppercase}})</strong></span></p>
+    </div>
+</body>
+</html>
